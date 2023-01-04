@@ -8,6 +8,7 @@ const Search = ({ result, back }) => {
   );
   useEffect(() => {
     back(filteredResult);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [term]);
 
   return (
