@@ -11,6 +11,6 @@ The application uses a countries API to fetch all the listed countries, then can
 
 ### react frontend:
 1. axios
-
+2. react-window 1.8.8
 ***
 
