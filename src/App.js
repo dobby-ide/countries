@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
+import AllCountries from './components/AllCountries';
+import SingleCountry from './components/SingleCountry';
 function App() {
+  const [country, setCountry] = useState();
+  const back = () => {
+    setCountry(null);
+  };
+  const onSelectedCountry = (country) => {
+    setCountry(country);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!country ? (
+        <AllCountries selectCountry={onSelectedCountry} />
+      ) : (
+        <SingleCountry country={country} back={back} />
+      )}
     </div>
   );
 }
